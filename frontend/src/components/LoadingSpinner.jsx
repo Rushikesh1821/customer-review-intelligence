@@ -1,0 +1,5 @@
+export function LoadingSpinner({ size = 'md' }) { return <span className={`inline-block animate-spin rounded-full border-2 border-slate-200 border-t-indigo-600 ${size === 'sm' ? 'h-4 w-4' : size === 'lg' ? 'h-8 w-8' : 'h-5 w-5'}`} aria-label="Loading" />; }
+export function LoadingPage({ message = 'Loading data…' }) { return <div className="flex min-h-72 flex-col items-center justify-center gap-3 text-sm text-slate-500"><LoadingSpinner size="lg" />{message}</div>; }
+export function SkeletonStats({ count = 4 }) { return <div className="kpi-grid">{Array.from({ length: count }, (_, index) => <div key={index} className="kpi-card"><div className="skeleton h-3 w-20" /><div className="skeleton mt-5 h-8 w-24" /><div className="skeleton mt-3 h-3 w-32" /></div>)}</div>; }
+export function SkeletonCard({ count = 1 }) { return <>{Array.from({ length: count }, (_, index) => <div key={index} className="surface surface-padded"><div className="skeleton h-4 w-32" /><div className="skeleton mt-4 h-3 w-full" /><div className="skeleton mt-2 h-3 w-4/5" /></div>)}</>; }
+export default LoadingSpinner;
